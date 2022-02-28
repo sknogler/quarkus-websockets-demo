@@ -1,0 +1,12 @@
+<mat-card class="input" *ngIf="!inProgress">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput type="text" [(ngModel)]="userName">
+  </mat-form-field>
+  <button mat-raised-button color="primary"
+          [disabled]="userName === null || inProgress"
+          (click)="login()">Start Chat</button>
+</mat-card>
+<mat-card *ngIf="inProgress">
+  <mat-spinner color="accent"></mat-spinner>
+</mat-card>

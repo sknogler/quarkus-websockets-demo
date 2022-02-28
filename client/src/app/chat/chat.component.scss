@@ -1,0 +1,10 @@
+@import "src/styles";
+
+.message {
+  margin-top: 1em;
+}
+
+.pull-right {
+  @extend .container;
+  justify-content: flex-end;
+}

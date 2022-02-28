@@ -1,0 +1,17 @@
+<mat-card *ngIf="messages !== null">
+  <mat-card class="input">
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <input matInput type="text" [(ngModel)]="message">
+    </mat-form-field>
+    <button mat-raised-button color="primary" [disabled]="message === null" (click)="sendMessage()">Send</button>
+  </mat-card>
+  <mat-card class="message" *ngFor="let message of messages">
+    <div class="pull-right">
+      {{message.dateTime | date: "dd.MM.yyyy HH:mm"}}
+    </div>
+    <div>
+      {{message.message}}
+    </div>
+  </mat-card>
+</mat-card>

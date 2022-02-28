@@ -7,11 +7,11 @@ import javax.websocket.server.ServerEndpoint;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@ServerEndpoint("/chat/{username}")
 @ApplicationScoped
-public class StartWebSocket {
+@ServerEndpoint("/chat/{username}")
+public final class ChatSocket {
 
-    Map<String, Session> sessions = new ConcurrentHashMap<>();
+    private final Map<String, Session> sessions = new ConcurrentHashMap<>();
 
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username) {
@@ -48,5 +48,4 @@ public class StartWebSocket {
             });
         });
     }
-
 }
